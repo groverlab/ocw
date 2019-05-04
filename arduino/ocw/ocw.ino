@@ -4,7 +4,7 @@ void setup() {
   pinMode(4, OUTPUT);
 }
 
-String ocw = String("o2wc4wo3wc2wo4wc3w");
+String ocw = String("o2 c4 w500 o3 c2 w500 o4 c3 w500");
 
 int i = 0;
 void loop() {
@@ -15,7 +15,11 @@ void loop() {
     digitalWrite(ocw.substring(i+1,i+2).toInt(), LOW);
   }
   if(ocw.charAt(i) == 'w') {
-    delay(100);
+    int len = 1;
+    while(isDigit(ocw.charAt(i+1+len))) {
+      len += 1;
+    }
+    delay(ocw.substring(i+1,i+1+len).toInt());
   }
   i += 1;
   if(i > ocw.length()) {
