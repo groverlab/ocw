@@ -4,33 +4,45 @@ void setup() {
   pinMode(13, OUTPUT);
 }
 
-String ocw = String("o11 c13 w500 o12 c11 w500 o13 c12 w500");
+String ocw = String("o11 c13 w200 o12 c11 w200 o13 c12 w200");
 
+bool waiting = false;
 int i = 0;
+unsigned long startTime = 0;
+
 void loop() {
-  if(ocw.charAt(i) == 'o') {
-    int len = 1;
-    while(isDigit(ocw.charAt(i+1+len))) {
-      len += 1;
+  if(waiting) {
+    if(millis() >= startTime) {
+      waiting = false;
+      i += 1;
     }
-    digitalWrite(ocw.substring(i+1,i+1+len).toInt(), HIGH);
   }
-  if(ocw.charAt(i) == 'c') {
-    int len = 1;
-    while(isDigit(ocw.charAt(i+1+len))) {
-      len += 1;
+  else {
+    if(ocw.charAt(i) == 'o') {
+      int len = 1;
+      while(isDigit(ocw.charAt(i+1+len))) {
+        len += 1;
+      }
+      digitalWrite(ocw.substring(i+1,i+1+len).toInt(), HIGH);
     }
-    digitalWrite(ocw.substring(i+1,i+1+len).toInt(), LOW);
-  }
-  if(ocw.charAt(i) == 'w') {
-    int len = 1;
-    while(isDigit(ocw.charAt(i+1+len))) {
-      len += 1;
+    if(ocw.charAt(i) == 'c') {
+      int len = 1;
+      while(isDigit(ocw.charAt(i+1+len))) {
+        len += 1;
+      }
+      digitalWrite(ocw.substring(i+1,i+1+len).toInt(), LOW);
     }
-    delay(ocw.substring(i+1,i+1+len).toInt());
-  }
-  i += 1;
-  if(i > ocw.length()) {
-    i = 0;
+    if(ocw.charAt(i) == 'w') {
+      int len = 1;
+      while(isDigit(ocw.charAt(i+1+len))) {
+        len += 1;
+      }
+      startTime = millis()+ocw.substring(i+1,i+1+len).toInt();
+      waiting = true;
+    }
+    i += 1;
+    if(i > ocw.length()) {
+      i = 0;
+    }
   }
 }
