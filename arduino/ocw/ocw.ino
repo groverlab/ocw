@@ -1,9 +1,13 @@
 #include <IRremote.h>
+#include <LiquidCrystal.h>
 
 const int RECV_PIN = 5;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 unsigned long key_value = 0;
+
+const int rs = 12, en = 11, d4 = 9, d5 = 8, d6 = 7, d7 = 6;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 void setup() {
   Serial.begin(9600);
@@ -12,6 +16,8 @@ void setup() {
   pinMode(4, OUTPUT);
   irrecv.enableIRIn();
   irrecv.blink13(false);
+  lcd.begin(16, 2);
+  lcd.print("hello, world!");
 }
 
 String ocw = String("o2 c4 w200 o3 c2 w200 o4 c3 w200");
