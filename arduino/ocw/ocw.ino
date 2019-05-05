@@ -1,20 +1,20 @@
 #include <IRremote.h>
 
-const int RECV_PIN = 7;
+const int RECV_PIN = 5;
 IRrecv irrecv(RECV_PIN);
 decode_results results;
 unsigned long key_value = 0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(11, OUTPUT);
-  pinMode(12, OUTPUT);
-  pinMode(13, OUTPUT);
+  pinMode(2, OUTPUT);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
   irrecv.enableIRIn();
   irrecv.blink13(false);
 }
 
-String ocw = String("o11 c13 w200 o12 c11 w200 o13 c12 w200");
+String ocw = String("o2 c4 w200 o3 c2 w200 o4 c3 w200");
 
 bool waiting = false;
 int i = 0;
@@ -37,17 +37,17 @@ void loop() {
       break;
       case 0xFF22DD:
       Serial.println("|<<");
-      ocw = "o11 w200 c13 w200 o12 w200 c11 w200 o13 w200 c12 w200";
+      ocw = "o2 w200 c4 w200 o3 w200 c2 w200 o4 w200 c3 w200";
       i=-1;
       break;
       case 0xFF02FD:
       Serial.println(">||");
-      ocw = "c11 c12 c13 w100";
+      ocw = "c2 c3 c4 w100";
       i=-1;
       break;  
       case 0xFFC23D:
       Serial.println(">>|");
-      ocw = "o13 w200 c11 w200 o12 w200 c13 w200 o11 w200 c12 w200";
+      ocw = "o4 w200 c2 w200 o3 w200 c4 w200 o2 w200 c3 w200";
       i=0-1;
       break ;               
       case 0xFFE01F:
