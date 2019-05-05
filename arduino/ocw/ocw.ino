@@ -37,16 +37,18 @@ void loop() {
       break;
       case 0xFF22DD:
       Serial.println("|<<");
-      ocw = "o11 c13 w200 o12 c11 w200 o13 c12 w200";
-      i=0;
+      ocw = "o11 w200 c13 w200 o12 w200 c11 w200 o13 w200 c12 w200";
+      i=-1;
       break;
       case 0xFF02FD:
       Serial.println(">||");
-      break ;  
+      ocw = "c11 c12 c13 w100";
+      i=-1;
+      break;  
       case 0xFFC23D:
       Serial.println(">>|");
-      ocw = "o13 c11 w200 o12 c13 w200 o11 c12 w200";
-      i=0;
+      ocw = "o13 w200 c11 w200 o12 w200 c13 w200 o11 w200 c12 w200";
+      i=0-1;
       break ;               
       case 0xFFE01F:
       Serial.println("v");
