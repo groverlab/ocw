@@ -17,7 +17,7 @@ void setup() {
   irrecv.enableIRIn();
   irrecv.blink13(false);
   lcd.begin(16, 2);
-  lcd.print("hello, world!");
+  lcd.print(" UCR Bee Brain");
 }
 
 String ocw = String("o2 c4 w200 o3 c2 w200 o4 c3 w200");
@@ -43,16 +43,22 @@ void loop() {
       break;
       case 0xFF22DD:
       Serial.println("|<<");
+      lcd.setCursor(0, 1);
+      lcd.print("Pumping backward");
       ocw = "o2 w200 c4 w200 o3 w200 c2 w200 o4 w200 c3 w200";
       i=-1;
       break;
       case 0xFF02FD:
       Serial.println(">||");
+      lcd.setCursor(0, 1);
+      lcd.print("Standby         ");
       ocw = "c2 c3 c4 w100";
       i=-1;
       break;  
       case 0xFFC23D:
       Serial.println(">>|");
+      lcd.setCursor(0, 1);
+      lcd.print("Pumping forward ");
       ocw = "o4 w200 c2 w200 o3 w200 c4 w200 o2 w200 c3 w200";
       i=0-1;
       break ;               
