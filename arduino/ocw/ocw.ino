@@ -10,7 +10,6 @@ const int rs = 12, en = 11, d4 = 9, d5 = 8, d6 = 7, d7 = 6;
 LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
 
 void setup() {
-  Serial.begin(9600);
   pinMode(2, OUTPUT);
   pinMode(3, OUTPUT);
   pinMode(4, OUTPUT);
@@ -32,84 +31,60 @@ void loop() {
         results.value = key_value;
       }
     switch(results.value) {
-      case 0xFFA25D:
-      Serial.println("POWER");
+      case 0xFFA25D:  // POWER
       break;
-      case 0xFF629D:
-      Serial.println("VOL+");
+      case 0xFF629D:  // VOL+
       break;
-      case 0xFFE21D:
-      Serial.println("FUNC/STOP");
+      case 0xFFE21D:  // FUNC/STOP
       break;
-      case 0xFF22DD:
-      Serial.println("|<<");
+      case 0xFF22DD:  // |<<
       lcd.setCursor(0, 1);
       lcd.print("Pumping backward");
       ocw = "o2 w200 c4 w200 o3 w200 c2 w200 o4 w200 c3 w200";
       i=-1;
       break;
-      case 0xFF02FD:
-      Serial.println(">||");
+      case 0xFF02FD:  // >||
       lcd.setCursor(0, 1);
       lcd.print("Standby         ");
       ocw = "c2 c3 c4 w100";
       i=-1;
       break;  
-      case 0xFFC23D:
-      Serial.println(">>|");
+      case 0xFFC23D:  // >>|
       lcd.setCursor(0, 1);
       lcd.print("Pumping forward ");
       ocw = "o4 w200 c2 w200 o3 w200 c4 w200 o2 w200 c3 w200";
       i=0-1;
-      break ;               
-      case 0xFFE01F:
-      Serial.println("v");
-      break ;  
-      case 0xFFA857:
-      Serial.println("VOL-");
-      break ;  
-      case 0xFF906F:
-      Serial.println("^");
-      break ;  
-      case 0xFF6897:
-      Serial.println("0");
-      break ;  
-      case 0xFF9867:
-      Serial.println("EQ");
-      break ;
-      case 0xFFB04F:
-      Serial.println("ST/REPT");
-      break ;
-      case 0xFF30CF:
-      Serial.println("1");
-      break ;
-      case 0xFF18E7:
-      Serial.println("2");
-      break ;
-      case 0xFF7A85:
-      Serial.println("3");
-      break ;
-      case 0xFF10EF:
-      Serial.println("4");
-      break ;
-      case 0xFF38C7:
-      Serial.println("5");
-      break ;
-      case 0xFF5AA5:
-      Serial.println("6");
-      break ;
-      case 0xFF42BD:
-      Serial.println("7");
-      break ;
-      case 0xFF4AB5:
-      Serial.println("8");
-      break ;
-      case 0xFF52AD:
-      Serial.println("9");
-      break ;      
-
-
-
+      break;               
+      case 0xFFE01F:  // v
+      break;  
+      case 0xFFA857:  // VOL-
+      break;  
+      case 0xFF906F:  // ^
+      break;  
+      case 0xFF6897:  // 0
+      break;  
+      case 0xFF9867:  // EQ
+      break;
+      case 0xFFB04F:  // ST/REPT
+      break;
+      case 0xFF30CF:  // 1
+      break;
+      case 0xFF18E7:  // 2
+      break;
+      case 0xFF7A85:  // 3
+      break;
+      case 0xFF10EF:  // 4
+      break;
+      case 0xFF38C7:  // 5
+      break;
+      case 0xFF5AA5:  // 6
+      break;
+      case 0xFF42BD:  // 7
+      break;
+      case 0xFF4AB5:  // 8
+      break;
+      case 0xFF52AD:  // 9
+      break;     
     }
     key_value = results.value;
     irrecv.resume();
