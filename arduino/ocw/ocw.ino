@@ -19,7 +19,8 @@ void setup() {
   lcd.print(" UCR Bee Brain");
 }
 
-String ocw = String("o2 c4 w200 o3 c2 w200 o4 c3 w200");
+// OCW code to start repeating at startup:
+String ocw = String("c2 c3 c4 w100");
 
 bool waiting = false;
 int i = 0;
@@ -31,60 +32,82 @@ void loop() {
         results.value = key_value;
       }
     switch(results.value) {
+
       case 0xFFA25D:  // POWER
       break;
+
       case 0xFF629D:  // VOL+
       break;
+
       case 0xFFE21D:  // FUNC/STOP
       break;
+
       case 0xFF22DD:  // |<<
       lcd.setCursor(0, 0);
       lcd.print("Pumping backward");
       ocw = "o2 w200 c4 w200 o3 w200 c2 w200 o4 w200 c3 w200";
       i=-1;
       break;
+
       case 0xFF02FD:  // >||
       lcd.setCursor(0, 0);
       lcd.print("Standby         ");
       ocw = "c2 c3 c4 w100";
       i=-1;
       break;  
+
       case 0xFFC23D:  // >>|
       lcd.setCursor(0, 0);
       lcd.print("Pumping forward ");
       ocw = "o4 w200 c2 w200 o3 w200 c4 w200 o2 w200 c3 w200";
       i=0-1;
-      break;               
+      break;
+
       case 0xFFE01F:  // v
-      break;  
+      break;
+
       case 0xFFA857:  // VOL-
-      break;  
+      break; 
+
       case 0xFF906F:  // ^
-      break;  
+      break; 
+
       case 0xFF6897:  // 0
-      break;  
+      break;
+
       case 0xFF9867:  // EQ
       break;
+
       case 0xFFB04F:  // ST/REPT
       break;
+
       case 0xFF30CF:  // 1
       break;
+
       case 0xFF18E7:  // 2
       break;
+
       case 0xFF7A85:  // 3
       break;
+
       case 0xFF10EF:  // 4
       break;
+
       case 0xFF38C7:  // 5
       break;
+
       case 0xFF5AA5:  // 6
       break;
+
       case 0xFF42BD:  // 7
       break;
+
       case 0xFF4AB5:  // 8
       break;
+
       case 0xFF52AD:  // 9
-      break;     
+      break;   
+
     }
     key_value = results.value;
     irrecv.resume();
