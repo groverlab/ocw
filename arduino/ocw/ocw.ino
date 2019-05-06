@@ -38,19 +38,19 @@ void loop() {
       case 0xFFE21D:  // FUNC/STOP
       break;
       case 0xFF22DD:  // |<<
-      lcd.setCursor(0, 1);
+      lcd.setCursor(0, 0);
       lcd.print("Pumping backward");
       ocw = "o2 w200 c4 w200 o3 w200 c2 w200 o4 w200 c3 w200";
       i=-1;
       break;
       case 0xFF02FD:  // >||
-      lcd.setCursor(0, 1);
+      lcd.setCursor(0, 0);
       lcd.print("Standby         ");
       ocw = "c2 c3 c4 w100";
       i=-1;
       break;  
       case 0xFFC23D:  // >>|
-      lcd.setCursor(0, 1);
+      lcd.setCursor(0, 0);
       lcd.print("Pumping forward ");
       ocw = "o4 w200 c2 w200 o3 w200 c4 w200 o2 w200 c3 w200";
       i=0-1;
@@ -125,4 +125,7 @@ void loop() {
       i = 0;
     }
   }
+
+lcd.setCursor(0, 1);
+lcd.print(millis()/1000.0);
 }
