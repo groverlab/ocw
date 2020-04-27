@@ -12,20 +12,23 @@ OCW has three main commands that gave the language its name:
 
 * `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second)
 
-
+That's all you need to know to write basic OCW programs.  For more advanced stuff, read below for the [OCW syntax]().
 
 
 ## Platforms
 
 This repository contains three different implementations of OCW, each intended for a different platform:
 
-* [perl](perl/) contains the original (circa 1999) implementation of OCW.  This version is written in Perl, runs on Linux, and uses the parallel port to control the microfluidic valves.  
+* [arduino](arduino/) contains a new version of OCW that can run on Arduino microcontrollers.
 
-* [labview](labview/) contains a newer version of OCW implemented in LabVIEW.  It runs on any computer that can run LabVIEW, and uses National Instruments hardware to control microfluidic valves.
+* [labview](labview/) contains a version of OCW implemented in LabVIEW.  It runs on any computer that can run LabVIEW, and uses National Instruments hardware to control microfluidic valves.
 
-* [arduino](arduino/) contains a new version of OCW that can run on Arduino microcontrollers.  
+* [perl](perl/) contains the original (circa 1999) implementation of OCW.  This version is written in Perl, runs on Linux, and controls microfluidic valves using parallel ports.  Since parallel ports are getting hard to come by, this version is probably of limited use today.  
 
 
+## Syntax
+
+asadf
 
  
 
