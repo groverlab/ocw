@@ -50,7 +50,7 @@ To introduce OCW's syntax, here's a simple OCW program:
 <b>end</b>
 </pre>
 
-The first line, `/ I'm a comment!`, is a comment.  Any line that starts with `/` is ignored by the OCW intrepreter.  Some implementations of OCW (like the LabVIEW implementation) show comment text to the user, so comments can be a handy tool for user interaction, like telling the user to `/ Fill the buffer reservoir` or `/ Empty the waste reservoir`.
+The first line, `/ I'm a comment!`, is a comment.  Any line that starts with `/` is ignored by the OCW interpreter.  Some implementations of OCW (like the LabVIEW implementation) show comment text to the user, so comments can be a handy tool for user interaction, like telling the user to `/ Fill the buffer reservoir` or `/ Empty the waste reservoir`.
 
 The next line, `main`, means that this is the start of the `main` block.  All OCW programs need a `main` block; it tells the OCW interpreter where to begin executing the code.  The contents of the `main` block are all the lines between `main` and `end`.
 
