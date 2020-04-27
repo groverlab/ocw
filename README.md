@@ -2,6 +2,9 @@
 
 # A really simple language for controlling microfluidic valves.
 
+
+
+
 ## Overview
 
 OCW has three main commands that gave the language its name:
@@ -15,6 +18,9 @@ OCW has three main commands that gave the language its name:
 That's all you need to know to write basic OCW programs.  For more advanced stuff, read below for the [OCW syntax]().
 
 
+
+
+
 ## Platforms
 
 This repository contains three different implementations of OCW, each intended for a different platform:
@@ -26,7 +32,12 @@ This repository contains three different implementations of OCW, each intended f
 * [perl](perl/) contains the original (circa 1999!) implementation of OCW.  This version is written in Perl, runs on Linux, and controls microfluidic valves using parallel ports.  Since parallel ports are getting hard to come by, this version is probably of limited use today.  
 
 
-## Syntax
+
+
+
+
+
+## A simple example
 
 To introduce OCW's syntax, here's a simple OCW program:
 
@@ -50,6 +61,11 @@ The following line, `w1000`, makes the OCW interpreter wait or pause for 1000 mi
 The next line, `c23`, closes valve number 23.
 
 The last line, `end`, marks the end of the `main` block.  Execution of the OCW program stops here.
+
+
+
+
+## A more complex example
 
 Here's a more complex complex example that defines and calls a custom block named `pump`.  Custom blocks enable the user to define a snippet of OCW code and then execute that code elsewhere in the program.
 
