@@ -30,12 +30,12 @@ This repository contains three different implementations of OCW, each intended f
 
 To introduce OCW's syntax, here's a sample OCW program:
 
-```bash
+<pre>
 / This OCW code pumps fluid using three valves as a diaphragm pump.
 
 / Every OCW program needs to define a "main" subroutine.
 / This "main" subroutine calls the "pump" subroutine ten times, then stops:
-main
+<b>main</b>
 call pump 10
 end
 
@@ -53,7 +53,7 @@ w1000
 o2
 w1000
 c1
-```
+</pre>
 
 
 
