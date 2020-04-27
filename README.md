@@ -42,7 +42,7 @@ To introduce OCW's syntax, here's a sample OCW program:
 <i>/ Here is the definition of the "pump" subroutine.</i>
 <i>/ This contains all the valve open/close steps necessary for one pumping cycle,</i>
 <i>/ waiting for one second between steps:</i>
-<b>o</b>
+<b>o0</b>
 <b>w1000</b>
 <b>c2</b>
 <b>w1000</b>
