@@ -36,7 +36,7 @@ To introduce OCW's syntax, here's a simple OCW program:
 <b>o23</b>
 <b>w1000</b>
 <b>c23</b>
-<b>end
+<b>end</b>
 </pre>
 
 The first line, `/ I'm a comment!`, is a comment.  Any line that starts with `/` is ignored by the OCW intrepreter.  Some implementations of OCW (like the LabVIEW implementation) show comment text to the user, so comments can be a handy tool for user interaction, like telling the user to `/ Fill the buffer reservoir` or `/ Empty the waste reservoir`.  The next line, `main`, means that this is the start of the `main` block.  All OCW programs need a `main` block; it tells the OCW interpreter where to begin executing the code.  The contents of the `main` block are all the lines between `main` and `end`.  The next line, `o23`, tells OCW to open valve number 23.  A description of how you tell OCW which physical valve corresponds to a given number is given below.  The following line, `w1000`, makes the OCW interpreter wait or pause for 1000 milliseconds (or 1 second).  This is how we control the timing and speed of execution of an OCW program.  The next line, `c23`, closes valve number 23.  The last line, `end`, marks the end of the `main` block.  Execution of the OCW program stops here.
