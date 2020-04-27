@@ -28,7 +28,17 @@ This repository contains three different implementations of OCW, each intended f
 
 ## Syntax
 
-To introduce OCW's syntax, here's a sample OCW program:
+To introduce OCW's syntax, here's a simple OCW program:
+
+<pre>
+    <b>main</b>
+    <b>o23</b>
+    <b>w1000</b>
+    <b>c23</b>
+    <b>end
+</pre>
+
+asdf
 
 <pre>
 <i>/ This OCW code pumps fluid using three valves as a diaphragm pump.</i>
@@ -42,6 +52,7 @@ To introduce OCW's syntax, here's a sample OCW program:
 <i>/ Here is the definition of the "pump" subroutine.</i>
 <i>/ This contains all the valve open/close steps necessary for one pumping cycle,</i>
 <i>/ waiting for one second between steps:</i>
+<b>pump</b>
 <b>o0</b>
 <b>w1000</b>
 <b>c2</b>
@@ -53,6 +64,7 @@ To introduce OCW's syntax, here's a sample OCW program:
 <b>o2</b>
 <b>w1000</b>
 <b>c1</b>
+<end>
 </pre>
 
 
