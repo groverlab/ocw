@@ -2,6 +2,19 @@
 
 # A really simple language for controlling microfluidic valves.
 
+## Overview
+
+OCW has three main commands that gave the language its name:
+
+* `o`:  Open the specified valve (so `o3` opens valve number 3)
+
+* `c`:  Close the specified valve (so `c5` closes valve number 5)
+
+* `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second)
+
+
+
+
 ## Platforms
 
 This repository contains three different implementations of OCW, each intended for a different platform:
