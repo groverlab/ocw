@@ -33,7 +33,8 @@ To introduce OCW's syntax, here's a sample OCW program:
 ```
 / This OCW code pumps fluid using three valves as a diaphragm pump.
 
-/ The main program just calls the 'pump' subroutine ten times:
+/ Every OCW program needs to define a 'main' subroutine.
+/ This 'main' subroutine calls the 'pump' subroutine ten times, then stops:
 main
 call pump 10
 end
