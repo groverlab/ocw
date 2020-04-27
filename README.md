@@ -1,24 +1,24 @@
 ![OCW logo](ocw.png)
 
-A really simple language for controlling microfluidic valves.
+* A really simple language for controlling microfluidic valves.
+
+** Platforms
+
+This repository contains three different implementations of OCW, each intended for a different platform:
+
+* [perl](perl/) contains the original (circa 1999) implementation of OCW.  This version is written in Perl, runs on Linux, and uses the parallel port to control the microfluidic valves.  
+
+* [labview](labview/) contains a newer version of OCW implemented in LabVIEW.  It runs on any computer that can run LabVIEW, and uses National Instruments hardware to control microfluidic valves.
+
+* [arduino](arduino/) contains a new version of OCW that can run on Arduino microcontrollers.  
+
+
+
+ 
 
 
 
 
-
-
-The two main versions of OCW (see Section 5.9) have slightly different com- mands. The original Linux version for valve control via parallel port interface (used in [136] and [140]) includes port address setting commands that are unnecessary in the LabVIEW version. Likewise, the newer LabVIEW version for control via National In- struments hardware (used in [145]) includes features for complex OCW programs that are unavailable in the original Linux version. In the following language references, all commands are assumed valid for both versions of OCW, with exceptions marked as Linux only or LabVIEW only. This reference was typeset using the conventions shown in Table A.1:
-
-
-
-Font
-fixed width
-italics
-sans serif
-Meaning
-OCW keyword
-User-specified variable Keyboard or on-screen control
-224
  on
 Table A.1: Typographical conventions for the OCW language reference. Open valve n.
 cn
