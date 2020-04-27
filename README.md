@@ -138,15 +138,16 @@ Inside the definition of the `pump` block we find instructions for opening and c
 * `include`:  Include the contents of a separate OCW file, as if they were part of the current file.  For example, the command `include otherFile.ocw` opens the file named `otherFile.ocw` in the same directory as the current file, reads its contents, and operates on its contents as if they were inserted into the current file at the location of the `include` command.  *Supported only in the LabVIEW implementation of OCW.*
 
 * `a`:  Specify which parallel port is used to control which set of eight valves *(used only in the Perl/Linux implementation of OCW)*.  For example, `a956` specifies that valves 0 through 7 will use the parallel port with the hardware address 956 in decimal or 0x3BC in hexadecimal.  The a command is called as many times as there are parallel ports to be used on the computer. The order in which the ports are called is used to determine which set of 8 valves is assigned to which parallel port. The first parallel port address set using a will control valves 0 through 7, the second port address set with a will control valves 8 through 15, and so on. The port address is set using the decimal equivalent of the (usually hexidecimal) parallel port address.  Some typical hexadecimal parallel port addresses and their decimal equivalents are:
-| Port address (hexidecimal) | OCW address-setting code (decimal) |
-| -------------------------- | -----------------------------------|
-|         0x3BC   |   a956   |
-|         0x378   |   a888   |
-|         0x278   |   a632   |
-|         0x368   |   a872   |
-|         0x268   |   a616   |
-|         0x358   |   a856   |
-|         0x258   |   a600   |  
+
+    | Port address (hexidecimal) | OCW address-setting code (decimal) |
+    | -------------------------- | -----------------------------------|
+    |         0x3BC   |   a956   |
+    |         0x378   |   a888   |
+    |         0x278   |   a632   |
+    |         0x368   |   a872   |
+    |         0x268   |   a616   |
+    |         0x358   |   a856   |
+    |         0x258   |   a600   |  
 
 * `armed`:  Without an armed command in the beginning of the file, the OCW code will execute but will not actually control the parallel ports (“debug mode”). Include the armed command to actually control the parallel ports.
 
