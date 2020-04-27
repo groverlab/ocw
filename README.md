@@ -31,28 +31,28 @@ This repository contains three different implementations of OCW, each intended f
 To introduce OCW's syntax, here's a sample OCW program:
 
 <pre>
-/ This OCW code pumps fluid using three valves as a diaphragm pump.
+<i>/ This OCW code pumps fluid using three valves as a diaphragm pump.</i>
 
-/ Every OCW program needs to define a "main" subroutine.
-/ This "main" subroutine calls the "pump" subroutine ten times, then stops:
+<i>/ Every OCW program needs to define a "main" subroutine.</i>
+<i>/ This "main" subroutine calls the "pump" subroutine ten times, then stops:</i>
 <b>main</b>
-<b>call <i>pump</i> 10</b>
+<b>call pump 10</b>
 <b>end</b>
 
-/ Here is the definition of the "pump" subroutine.
-/ This contains all the valve open/close steps necessary for one pumping cycle,
-/ waiting for one second between steps:
-<b>o</b><i>0</i>
-w1000
-c2
-w1000
-o1
-w1000
-c0
-w1000
-o2
-w1000
-c1
+<i>/ Here is the definition of the "pump" subroutine.</i>
+<i>/ This contains all the valve open/close steps necessary for one pumping cycle,</i>
+<i>/ waiting for one second between steps:</i>
+<b>o</b>
+<b>w1000</b>
+<b>c2</b>
+<b>w1000</b>
+<b>o1</b>
+<b>w1000</b>
+<b>c0</b>
+<b>w1000</b>
+<b>o2</b>
+<b>w1000</b>
+<b>c1</b>
 </pre>
 
 
