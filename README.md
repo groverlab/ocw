@@ -30,7 +30,7 @@ This repository contains three different implementations of OCW, each intended f
 
 To introduce OCW's syntax, here's a sample OCW program:
 
-```
+```c
 / This OCW code pumps fluid using three valves as a diaphragm pump.
 
 / Every OCW program needs to define a 'main' subroutine.
