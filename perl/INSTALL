@@ -1,0 +1,17 @@
+OCW v0.91 (c) 2003 by Will Grover
+Released under the GNU General Public License
+
+###########################################################################
+
+Run
+
+   make
+
+to prepare the "ocw" interpreter and "linux" helper programs.  Run
+
+   make install
+
+as root to install the programs to /usr/local/bin.  If you want to clean up the generated files and start again, run
+
+   make clean
+
