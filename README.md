@@ -36,13 +36,13 @@ To introduce OCW's syntax, here's a sample OCW program:
 / Every OCW program needs to define a "main" subroutine.
 / This "main" subroutine calls the "pump" subroutine ten times, then stops:
 <b>main</b>
-call pump 10
-end
+<b>call <i>pump</i> 10</b>
+<b>end</b>
 
 / Here is the definition of the "pump" subroutine.
 / This contains all the valve open/close steps necessary for one pumping cycle,
 / waiting for one second between steps:
-o0
+<b>o</b><i>0</i>
 w1000
 c2
 w1000
