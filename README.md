@@ -106,23 +106,23 @@ Inside the definition of the `pump` block we find instructions for opening and c
 ## OCW syntax reference
 
 * `o`:  Open the specified valve (for example, `o3` opens valve number 3).  If the valve is already open, it stays open.  There are differences between how the different OCW implementations associate a physical valve with a particular valve number:
-** Arduino implementation:  FIXME
-** LabVIEW implementation:  The physical hardware associated with each valve number is assigned in *listener.vi*.
-** Perl/Linux implementation:  Valves 0 through 7 are assigned to the first parallel port address set by the `a` command (described below), valves 8 through 15 are assigned to the second port address set, and so on.
+    * Arduino implementation:  FIXME
+    * LabVIEW implementation:  The physical hardware associated with each valve number is assigned in *listener.vi*.
+    * Perl/Linux implementation:  Valves 0 through 7 are assigned to the first parallel port address set by the `a` command (described below), valves 8 through 15 are assigned to the second port address set, and so on.
 
 * `c`:  Close the specified valve (for example `c5` closes valve number 5).  If the valve is already closed, it stays closed.  Also see the implementation-specific notes under `o` above.
 
 * `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second).  To wait "forever" (until the program is stopped, or until a user interacts with the program), once can simply wait for a very long time, like `w999999999999999`.  The accuracy of the `w` command is system-dependent and isn't guaranteed; for applications that require precise timing info, the user should verify that the requested wait times are accurate.
 
 * `\`:  Comment.  Any line that starts with `\`, like `\Hello world`, is ignored by the OCW interpreter.  Also, some OCW implementations show the comment text to the user during operation:
-** LabVIEW implementation:  The comment text is shown to the user on the front panel of *ocw.vi*.
-** Perl/Linux implementation:  The comment text is shown to the user on the command line.
-** Arduino implementation:  Currently comment text is ignored because user interaction is highly implementation specific on the Arduino platform, but adding support for e.g. printing a comment to an LCD screen should be relatively straightforward.
+    * LabVIEW implementation:  The comment text is shown to the user on the front panel of *ocw.vi*.
+    * Perl/Linux implementation:  The comment text is shown to the user on the command line.
+    * Arduino implementation:  Currently comment text is ignored because user interaction is highly implementation specific on the Arduino platform, but adding support for e.g. printing a comment to an LCD screen should be relatively straightforward.
 
 * `stop` stops the execution of the OCW program until the user intervenes.  The specific intervention required is implementation-specific:
-** LabVIEW implementation:  Execution stops until the user presses *Resume* on the front panel of *ocw.vi*.
-** Perl/Linux implementation:  Execution stops until the user presses Enter/Return on the keyboard.
-** Arduino implementation:  Currently `stop` is not supported on the Arduino.
+    * LabVIEW implementation:  Execution stops until the user presses *Resume* on the front panel of *ocw.vi*.
+    * Perl/Linux implementation:  Execution stops until the user presses Enter/Return on the keyboard.
+    * Arduino implementation:  Currently `stop` is not supported on the Arduino.
 
 * `main`:  Start of the declaration of the `main` block.  Every OCW program needs a `main` block; it's where execution starts.
 
@@ -131,9 +131,9 @@ Inside the definition of the `pump` block we find instructions for opening and c
 * *block_name*:  A single word that isn't one of OCW's other commands is treated as the beginning of the declaration of a custom block by that name.  So for example `closeAllValves` and `shut_down` and `call-for-help` are all valid beginnings custom block declarations.  `end` ends the current block declaration.
 
 * `call`:  Call (execute) a block defined elsewhere in the OCW program.  For example, `call closeAllValves` executes the code inside the custom block named `closeAllValves` defined elsewhere.  An optional numerical argument tells OCW how many times to execute the block's contents.  For example, `call pump_forward 100` executes the code inside the `pump_forward` custom block 100 times.  To keep repeating the block "forever," one can call it using a large number of repeats, like `call pump_forward 99999999999`.  To exit a repeated `call` early (before all of the repeats have been executed), the user can perform one of these implementation-specific operations:
-** LabVIEW implementation:  Escape a repeating `call` command early by clicking *Escape* on the front panel of *ocw.vi*.
-** Perl/Linux implementation:  Escape a repeating `call` command early by pressing Enter/Return on the keyboard.
-** Arduino implementation:  Currently escaping from a repeating `call` command early is not supported on the Arduino.
+    * LabVIEW implementation:  Escape a repeating `call` command early by clicking *Escape* on the front panel of *ocw.vi*.
+    * Perl/Linux implementation:  Escape a repeating `call` command early by pressing Enter/Return on the keyboard.
+    * Arduino implementation:  Currently escaping from a repeating `call` command early is not supported on the Arduino.
  
 * `include`:  Include the contents of a separate OCW file, as if they were part of the current file.  For example, the command `include otherFile.ocw` opens the file named `otherFile.ocw` in the same directory as the current file, reads its contents, and operates on its contents as if they were inserted into the current file at the location of the `include` command.  *Supported only in the LabVIEW implementation of OCW.*
 
