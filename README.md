@@ -112,25 +112,34 @@ Inside the definition of the `pump` block we find instructions for opening and c
 
 * `c`:  Close the specified valve (for example `c5` closes valve number 5).  If the valve is already closed, it stays closed.  Also see the implementation-specific notes under `o` above.
 
-* `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second).  To wait "forever" (until the program is stopped, or until a user interacts with the program), once can simply wait for a very long time, like `w999999999999999`.
+* `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second).  To wait "forever" (until the program is stopped, or until a user interacts with the program), once can simply wait for a very long time, like `w999999999999999`.  The accuracy of the `w` command is system-dependent and isn't guaranteed; for applications that require precise timing info, the user should verify that the requested wait times are accurate.
 
-* `\`:  Comment.  Any line that starts with `\` is ignored by the OCW interpreter.  Also, some OCW implementations show the comment text to the user during operation:
+* `\`:  Comment.  Any line that starts with `\`, like `\Hello world`, is ignored by the OCW interpreter.  Also, some OCW implementations show the comment text to the user during operation:
 ** LabVIEW implementation:  The comment text is shown to the user on the front panel of *manual.vi*.
 ** Perl/Linux implementation:  The comment text is shown to the user on the command line.
 ** Arduino implementation:  Currently comment text is ignored because user interaction is highly implementation specific on the Arduino platform, but adding support for e.g. printing a comment to an LCD screen should be relatively straightforward.
 
 
+* `main`:  Start of the declaration of the `main` block.  Every OCW program needs a `main` block; it's where execution starts.
 
+* `end`:  End of the current block (either `main` or a custom block).
+
+* *block_name*:  A single word that isn't one of OCW's other commands is treated as the beginning of the declaration of a custom block by that name.  So for example the code
+```
+closeItAll
+c0
+c1
+c2
+end
+```
+defines 
 
 
 
 
  
-Close valve n.
-Available valve numbers are the same as for the o command. If the valve is
-already closed, it will remain closed.
-Wait t milliseconds.
-The accuracy of the wait command is system-dependent; extremely short waits (< 100 ms) may be inaccurate.
+
+
 stop
 main
 end
