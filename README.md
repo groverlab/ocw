@@ -23,14 +23,37 @@ This repository contains three different implementations of OCW, each intended f
 
 * [labview](labview/) contains a version of OCW implemented in LabVIEW.  It runs on any computer that can run LabVIEW, and uses National Instruments hardware to control microfluidic valves.
 
-* [perl](perl/) contains the original (circa 1999) implementation of OCW.  This version is written in Perl, runs on Linux, and controls microfluidic valves using parallel ports.  Since parallel ports are getting hard to come by, this version is probably of limited use today.  
+* [perl](perl/) contains the original (circa 1999!) implementation of OCW.  This version is written in Perl, runs on Linux, and controls microfluidic valves using parallel ports.  Since parallel ports are getting hard to come by, this version is probably of limited use today.  
 
 
 ## Syntax
 
-asadf
+To introduce OCW's syntax, here's a sample OCW program:
 
- 
+```
+/ This OCW code pumps fluid using three valves as a diaphragm pump.
+
+/ The main program just calls the 'pump' subroutine ten times:
+main
+call pump 10
+end
+
+/ Here's the definition of the 'pump' subroutine.
+/ We're just opening/closing valves and waiting one second between each step:
+o0
+w1000
+c2
+w1000
+o1
+w1000
+c0
+w1000
+o2
+w1000
+c1
+```
+
+
 
 
 
