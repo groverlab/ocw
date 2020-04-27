@@ -1,8 +1,8 @@
 ![OCW logo](ocw.png)
 
-* A really simple language for controlling microfluidic valves.
+# A really simple language for controlling microfluidic valves.
 
-** Platforms
+## Platforms
 
 This repository contains three different implementations of OCW, each intended for a different platform:
 
@@ -20,7 +20,7 @@ This repository contains three different implementations of OCW, each intended f
 
 
  on
-Table A.1: Typographical conventions for the OCW language reference. Open valve n.
+
 cn
 wt
 Available valve numbers are 0 through 8n − 1 where n is the number of parallel ports (Linux only) or digital output ports (LabVIEW only) available on the system. In the Linux version of OCW, valves 0 through 7 are assigned to the first port address set, valves 8 through 15 are assigned to the second port address set, and so on (see the a command below). In the LabVIEW version of OCW, the order of the digital output ports is set in on the front panel of the VI. If the valve is already open, it will remain open.
