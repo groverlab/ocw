@@ -103,14 +103,29 @@ Inside the definition of the `pump` block we find instructions for opening and c
 
 
 
+## OCW syntax reference
+
+* `o`:  Open the specified valve (for example, `o3` opens valve number 3).  If the valve is already open, it stays open.  There are differences between how the different OCW implementations associate a physical valve with a particular valve number:
+** Arduino implementation:  FIXME
+** LabVIEW implementation:  The physical hardware associated with each valve number is assigned in *listener.vi*.
+** Perl/Linux implementation:  Valves 0 through 7 are assigned to the first parallel port address set by the `a` command (described below), valves 8 through 15 are assigned to the second port address set, and so on.
+
+* `c`:  Close the specified valve (for example `c5` closes valve number 5).  If the valve is already closed, it stays closed.  Also see the implementation-specific notes under `o` above.
+
+* `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second).  To wait "forever" (until the program is stopped, or until a user interacts with the program), once can simply wait for a very long time, like `w999999999999999`.
+
+* `\`:  Comment.  Any line that starts with `\` is ignored by the OCW interpreter.  Also, some OCW implementations show the comment text to the user during operation:
+** LabVIEW implementation:  The comment text is shown to the user on the front panel of *manual.vi*.
+** Perl/Linux implementation:  The comment text is shown to the user on the command line.
+** Arduino implementation:  Currently comment text is ignored because user interaction is highly implementation specific on the Arduino platform, but adding support for e.g. printing a comment to an LCD screen should be relatively straightforward.
 
 
 
- on
 
-cn
-wt
-Available valve numbers are 0 through 8n − 1 where n is the number of parallel ports (Linux only) or digital output ports (LabVIEW only) available on the system. In the Linux version of OCW, valves 0 through 7 are assigned to the first port address set, valves 8 through 15 are assigned to the second port address set, and so on (see the a command below). In the LabVIEW version of OCW, the order of the digital output ports is set in on the front panel of the VI. If the valve is already open, it will remain open.
+
+
+
+ 
 Close valve n.
 Available valve numbers are the same as for the o command. If the valve is
 already closed, it will remain closed.
