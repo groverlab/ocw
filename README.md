@@ -92,8 +92,7 @@ Here's a more complex complex example that defines and calls a custom block name
 <b>o2</b>
 <b>w1000</b>
 <b>c1</b>
-<end>
-</pre>
+<end></pre>
 
 As in the previous example, we see the mandatory `main` block defined by `main` and `end`.  This main block contains a single line, `call pump 10`.  This code tells the OCW interpreter to look for the custom block named `pump` elsewhere in the file and run its contents 10 times.  The number of repeats is optional; if it is omitted (as in `call pump`) then the named block will be run just once.
 
