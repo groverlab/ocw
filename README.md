@@ -99,7 +99,7 @@ As in the previous example, we see the mandatory `main` block defined by `main` 
 
 The remainder of the code is the definition of the `pump` custom block.  The definition begins with just the name of the custom block on a line by itself (that's the line that says `pump`) and ends with `end`, just as the `main` block ends with `end`.  
 
-Inside the definition of the `pump` block we find instructions for opening and closing three microfluidic valves in a peristaltic pumping pattern (see [this paper]() for more details).  Interspersed between the `o` and `c` commands are `w` (wait) commands that dictate the timing of this code.  With six `w` commands in the `pump` block, each of which waits for 1000 milliseconds or 1 second, the whole `pump` block will take 6 seconds to execute.  Since the `main` block repeats the `pump` block 10 times, this whole OCW program will take 60 seconds or 1 minute to execute.
+Inside the definition of the `pump` block we find instructions for opening and closing three microfluidic valves in a peristaltic pumping pattern (see [this paper](https://doi.org/10.1016/S0925-4005(02)00468-9) for more details).  Interspersed between the `o` and `c` commands are `w` (wait) commands that dictate the timing of this code.  With six `w` commands in the `pump` block, each of which waits for 1000 milliseconds or 1 second, the whole `pump` block will take 6 seconds to execute.  Since the `main` block repeats the `pump` block 10 times, this whole OCW program will take 60 seconds or 1 minute to execute.
 
 
 
