@@ -92,6 +92,7 @@ Here's a more complex complex example that defines and calls a custom block name
 <b>o2</b>
 <b>w1000</b>
 <b>c1</b>
+<b>w1000</b>
 <b>end</b>
 </pre>
 
