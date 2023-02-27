@@ -15,7 +15,7 @@ OCW has three main commands that gave the language its name:
 
 * `w`:  Wait for the specified amount of time, in milliseconds (so `w1000` waits for one second)
 
-That's all you need to know to write basic OCW programs.  For more advanced stuff, read below for the [OCW syntax]().
+That's all you need to know to write basic OCW programs.  For more advanced stuff, read below for the OCW syntax.
 
 
 
